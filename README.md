@@ -12,3 +12,7 @@
 ##### 2) 코드 중 loginForm.addEventListener('submit', onLoginSubmit) 의 개념이 이해가 안감
 ##### 3) html 파일에 동일한 코드를 사용했음에도 원하는 대로 실행이 안되는 현상이 있음 > source code를 복사/붙여넣기하니 들여쓰기가 다른점을 발견 > 그런데 vs code에서는 들여쓰기가 잘못된 것 처럼 나옴
 ---
+#### (Clock 만들기)
+##### 1) setInterval() 사용
+##### 2) padStart() 사용 : padStart()는 String 타입이므로 기존 코드를 String으로 감싼 후 사용한다.
+
