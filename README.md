@@ -31,3 +31,5 @@
 ##### 3) Todo list를 삭제하는 방법
 ##### 4) Todo list를 localStorage에 저장하는 방법
 
+#### (날씨 API 사용하기)
+
