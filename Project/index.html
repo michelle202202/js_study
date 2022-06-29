@@ -7,21 +7,23 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Project</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+      *{
+        font-family: 'Nanum Gothic', sans-serif;  
+      }
+      *{
+        box-sizing: border-box;
+      }
+    </style>
 </head>
 <body>
-<!--시계 표시-->
-  <div id="clock">00:00</div>
-
-<!--날씨 표시-->
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
 
 <!--로그인-->
     <form class="hidden" id="login-form">
-      <div class="box">
-        <label class="label">이름이 뭐에요?</label>
+      <label class="label" style="font-size: 20px;">이름이 뭐에요?</label>
           <input class="input"
           required
           maxlength="15"
@@ -29,23 +31,32 @@
           placeholder="What is your name?">
           <div style="height: 10px;"></div>
           <input type="submit"
-          button class="button is-success"
-          value="GO!"/>
-        </div>
+          button class="button is-success" value="GO!"/>
       </form>
 
 <!--로그인 후 박스 제거-->
-      <h1 class="hidden" id="greeting"></h1>
+      <h1 class="hidden" id="greeting" style="font-size: 40px; color:black;"></h1>
+
+<!--시계 표시-->
+  <div id="clock" style="font-size: 20px;">00:00</div>
+
+<!--날씨 표시-->
+    <div id="weather" style="font-size: 20px;">
+      <span></span>
+      <span></span>
+    </div>
+  
       
 <!--일정 입력창-->
   <form id="todo-form">
     <div class="box">
-    <label class="label">오늘은 어떤 계획이 있나요?</label>
+    <label class="label" style="font-size: 20px;">오늘은 어떤 계획이 있나요?</label>
     <input class="input"
     required
     type="text" 
     placeholder="Write a To Do and Press Enter"/>
     <div style="height: 10px;"></div>
+    
 
     <!-- <div class="items">
       <input id="item1" type="checkbox" checked>
@@ -90,7 +101,7 @@
 
 
 <!--명언 표시-->
-    <div id="quote" style="position: absolute; left: 40%; top: 900px; font-size: 20px;">
+    <div id="quote" style="font-size: 20px;">
       <span></span>
       <span></span>
     </div>

@@ -5,7 +5,7 @@ function getClock() {
   const hours = String(date.getHours()).padStart(2, '0');
   const minutes = String(date.getMinutes()).padStart(2, '0');
   const seconds = String(date.getSeconds()).padStart(2, '0');
-  clock.innerText = `${hours}:${minutes}:${seconds}`;
+  clock.innerText = `시간 : ${hours}:${minutes}:${seconds}`;
 }
 
 getClock(); // 1초 기다리지 않고 시간을 호출하려면 함수를 먼저 호출한 후 setInterval을 호출한다.

@@ -15,10 +15,24 @@ img {
 
 #login-form {
     position: absolute;
-    width: 100%;
+    width: 20%;
     margin-bottom: 20px;
-    padding: 0; 
-}  
+    margin: 20px;
+    padding: 0;
+    top: 7%; 
+}
+
+/* .login-box {
+    background-color:#FFFFFF;
+    width: 100%;
+    margin: 3px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px 5px 5px 5px;
+    top: 100px;
+    left: 10%;
+    opacity:0.8;
+}   */
 
 /* #todo-form {
     position: absolute;
@@ -56,6 +70,7 @@ img {
     border-width: 10px;
     top: 150px;
     left: 300px;
+    opacity:0.8;
 }
 
 
