@@ -1,4 +1,4 @@
-const clock = document.querySelector('h2#clock');
+const clock = document.querySelector('div#clock');
 
 function getClock() {
   const date = new Date(); // Date object 생성 // Date object는 아래 시간,분,초를 가져온다

@@ -57,4 +57,4 @@ const todaysQuote = quores[Math.floor(Math.random() * quores.length)];
 
 // 명언을 표시한다.
 quote.innerText = todaysQuote.quote;
-author.innerText = todaysQuote.author;
+author.innerText = `- ${todaysQuote.author} -`;

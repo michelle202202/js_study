@@ -1,42 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
-    <h2 id="clock">00:00</h2>
+<!--시계 표시-->
+  <div id="clock">00:00</div>
+
+<!--날씨 표시-->
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
+
+<!--로그인-->
     <form class="hidden" id="login-form">
-        <input
+      <div class="box">
+        <label class="label">이름이 뭐에요?</label>
+          <input class="input"
           required
           maxlength="15"
           type="text"
-          placeholder="What is your name?"
-        />
-        <input type="submit" value="Log In" />
+          placeholder="What is your name?">
+          <div style="height: 10px;"></div>
+          <input type="submit"
+          button class="button is-success"
+          value="GO!"/>
+        </div>
       </form>
+
+<!--로그인 후 박스 제거-->
       <h1 class="hidden" id="greeting"></h1>
-      <form id="todo-from">
-        <input type="text" placeholder="Write a To Do and Press Enter" required/>
-      </form>
-      <ul id="todo-list"></ul>
-      <div id="quote">
-        <span></span>
-        <span></span>
+      
+<!--일정 입력창-->
+  <form id="todo-form">
+    <div class="box">
+    <label class="label">오늘은 어떤 계획이 있나요?</label>
+    <input class="input"
+    required
+    type="text" 
+    placeholder="Write a To Do and Press Enter"/>
+    <div style="height: 10px;"></div>
+
+    <!-- <div class="items">
+      <input id="item1" type="checkbox" checked>
+  
+      <h1 class="done" aria-hidden="true">Done</h1>
+      <h1 class="undone" aria-hidden="true">Not Done</h1>
+    </div>
+  </div> -->
+</form>
+</div>
+
+<!--일정 입력-->
+<ul id="todo-list" style="position: absolute; left: 60px; top: 390px;"></ul>
+
+<!--캘린더 표시-->
+<form id ="calendar-box">
+    <div class="calendar">
+      <div class="box">
+        <div class="header">
+          <div class="year-month"></div>
+          <div class="nav">
+            <button class="nav-btn go-prev" onclick="prevMonth(event)">&lt;</button>
+            <button class="nav-btn go-today" onclick="goToday(event)">Today</button>
+            <button class="nav-btn go-next" onclick="nextMonth(event)">&gt;</button>
+          </div>
+        </div>
+        <div class="main">
+          <div class="days">
+            <div class="day">일</div>
+            <div class="day">월</div>
+            <div class="day">화</div>
+            <div class="day">수</div>
+            <div class="day">목</div>
+            <div class="day">금</div>
+            <div class="day">토</div>
+          </div>
+          <div class="dates"></div>
+        </div>
       </div>
-      <div id="weather">
-        <span></span>
-        <span></span>
-      </div>
+    </div>
+  </form>
+
+
+<!--명언 표시-->
+    <div id="quote" style="position: absolute; left: 40%; top: 900px; font-size: 20px;">
+      <span></span>
+      <span></span>
+    </div>
+
       <script src="js/greetings.js"></script>
       <script src="js/clock.js"></script>
       <script src="js/quotes.js"></script>
       <script src="js/background.js"></script>
       <script src="js/todo.js"></script>
       <script src="js/weather.js"></script>
-      <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23d5ecf2&ctz=Asia%2FSeoul&showTitle=1&showCalendars=1&showPrint=0&title=Calendar&hl=ko&src=bWljaGVsbGVAbmVvd2l6LmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=bmVvd2l6LmNvbV9rdXNibWpzYmNuMmNtYzU4Y2RuMHVpbmk1Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=a28uc291dGhfa29yZWEjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%237CB342&color=%2333B679&color=%23C0CA33&color=%23D50000" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+      <script src="js/calendar.js"></script>
+      
 </body>
 </html> 

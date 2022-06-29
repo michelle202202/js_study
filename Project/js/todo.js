@@ -1,5 +1,5 @@
 
-const toDoFrom = document.getElementById("todo-from");
+const toDoFrom = document.getElementById("todo-form");
 const toDoInput = toDoFrom.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
@@ -28,15 +28,17 @@ function painToDo(newTodo){
     li.id = newTodo.id; // li에 id 값을 넣는다.
     
     const span = document.createElement("span"); // span을 만든다
+    span.className = "tag is-success";
     span.innerText = newTodo.text; // span 내부에 from에서 준 새로운 텍스트(newTodo)값을 넣는다
     // 오브젝트를 .text를 사용해 변환해줘야 한다.
     
     const button = document.createElement("button");
-    button.innerText = "❌";
+    button.className = "delete is-small";
     button.addEventListener("click", deleteToDo);
     
-    li.appendChild(span); // span은 li의 내부에 있기 때문에 li 안에 span을 넣는다.
     li.appendChild(button);
+    li.appendChild(span); // span은 li의 내부에 있기 때문에 li 안에 span을 넣는다.
+
     toDoList.appendChild(li); // toDoList를 li에 추가한다.
 }
 

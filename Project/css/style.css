@@ -12,3 +12,222 @@ img {
     left: 0;
     z-index: -1;
   }
+
+#login-form {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0; 
+}  
+
+/* #todo-form {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 50px;
+    top: 20%;
+    left: 10px;
+}   */
+
+#todo-form {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 50px;
+    top: 20%;
+    left: 47%;
+}  
+
+#calendar-box {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 50px;
+    top: 20%;
+    left: 22%;
+}
+
+
+.box {
+    width: 25%;
+    height: 480px;
+    margin-bottom: 20px;
+    padding: 50px;
+    border-width: 10px;
+    top: 150px;
+    left: 300px;
+}
+
+
+/* *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  counter-reset: done-items undone-items;
+}
+
+h2 {
+  position: relative;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1.2em;
+}
+
+h2::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: -20px;
+  width: 5px;
+  background-color: #435757;
+}
+
+h2::after {
+  display: block;
+  float: right;
+  font-weight: normal;
+}
+
+.done {
+  order: 1;
+}
+
+.done::after {
+  content: ' (' counter(done-items) ')';
+}
+
+.undone {
+  order: 3;
+}
+
+.undone::after {
+  content: ' (' counter(undone-items) ')';
+}
+
+/* hide inputs offscreen, but at the same vertical positions as the correpsonding labels, so that tabbing scrolls the viewport as expected */
+/* input {
+  display: block;
+  height: 53px;
+  margin: 0 0 -53px -9999px;
+  order: 4;
+  outline: none;
+  counter-increment: undone-items;
+}
+
+input:checked {
+  order: 2;
+  counter-increment: done-items;  
+} */
+
+/* calendar 꾸미기 */
+.calender {
+    width: 500px;
+    margin: 50px;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.year-month {
+    font-size: 35px;
+}
+
+.nav {
+    display: flex;
+    border: 1px solid #333333;
+    border-radius: 5px;
+}
+
+.nav-btn {
+    width: 28px;
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    line-height: 34px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.go-today {
+    width: 75px;
+    border-left: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+.days {
+    display: flex;
+    margin: 25px 0 10px;
+}
+
+.day {
+    width: calc(100% / 7);
+    text-align: center;
+}
+
+.dates {
+    display: flex;
+    flex-flow: row wrap;
+    height: 300px;
+    border-top: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+.date {
+    width: calc(100% / 7);
+    padding: 15px;
+    text-align: right;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #333333;
+}
+
+/* 일요일 빨간색으로 칠하기 */
+.day:nth-child(7n + 1),
+.date:nth-child(7n + 1){
+    color: #d12e3e;
+}
+
+/* 토요일 파란색으로 칠하기 */
+.day:nth-child(7n),
+.date:nth-child(7n){
+    color: #396ee2;
+}
+
+/* opacity CSS 속성은 요소의 불투명도를 설정 */
+.other {
+    opacity: .3;
+}
+
+/* 오늘 날짜 백그라운드 색상 주기 */
+.today {
+    position: relative;
+    color: #FFFFFF;
+}
+
+/* 오늘 날짜에 빨간색 표시하기 */
+.today::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-color: #FF0000;
+    border-radius: 50%;
+    content: '';
+  }
