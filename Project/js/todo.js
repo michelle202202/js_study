@@ -14,7 +14,7 @@ function saveToDos(){
 
 // 등록한 목륵을 지우는 함수
 function deleteToDo(event){
-    const li = event.target.parentElement; // target은 클릭된 HTML element, parentElement는 클릭된 element의 부모
+    const li = event.target.parentElement.parentElement; // target은 클릭된 HTML element, parentElement는 클릭된 element의 부모
     li.remove(); // Element.remove() : 메서드는 DOM에서 요소를 제거
 
     // .filter() : 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환 // Array.prototype.filter()
@@ -36,7 +36,7 @@ function painToDo(newTodo){
     button.className = "delete is-small";
     button.addEventListener("click", deleteToDo);
     
-    li.appendChild(button);
+    span.appendChild(button);
     li.appendChild(span); // span은 li의 내부에 있기 때문에 li 안에 span을 넣는다.
 
     toDoList.appendChild(li); // toDoList를 li에 추가한다.

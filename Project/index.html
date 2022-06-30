@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Project</title>
+    <!--폰트 스타일 지정-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +24,7 @@
 
 <!--로그인-->
     <form class="hidden" id="login-form">
-      <label class="label" style="font-size: 20px;">이름이 뭐에요?</label>
+      <label class="label">이름이 뭐에요?</label>
           <input class="input"
           required
           maxlength="15"
@@ -35,41 +36,17 @@
       </form>
 
 <!--로그인 후 박스 제거-->
-      <h1 class="hidden" id="greeting" style="font-size: 40px; color:black;"></h1>
+      <h1 class="hidden" id="greeting"></h1>
 
 <!--시계 표시-->
-  <div id="clock" style="font-size: 20px;">00:00</div>
+  <div id="clock">00:00</div>
 
 <!--날씨 표시-->
-    <div id="weather" style="font-size: 20px;">
+    <div id="weather">
       <span></span>
       <span></span>
     </div>
-  
-      
-<!--일정 입력창-->
-  <form id="todo-form">
-    <div class="box">
-    <label class="label" style="font-size: 20px;">오늘은 어떤 계획이 있나요?</label>
-    <input class="input"
-    required
-    type="text" 
-    placeholder="Write a To Do and Press Enter"/>
-    <div style="height: 10px;"></div>
-    
 
-    <!-- <div class="items">
-      <input id="item1" type="checkbox" checked>
-  
-      <h1 class="done" aria-hidden="true">Done</h1>
-      <h1 class="undone" aria-hidden="true">Not Done</h1>
-    </div>
-  </div> -->
-</form>
-</div>
-
-<!--일정 입력-->
-<ul id="todo-list" style="position: absolute; left: 60px; top: 390px;"></ul>
 
 <!--캘린더 표시-->
 <form id ="calendar-box">
@@ -93,15 +70,45 @@
             <div class="day">금</div>
             <div class="day">토</div>
           </div>
-          <div class="dates"></div>
+          <div class="dates">
+            <input type="date" id="dateChice" onchange="dateChange();"/>
+            <input type="text" id="text"/>
+          </div>
         </div>
       </div>
     </div>
   </form>
 
 
+        
+<!--일정 입력창-->
+<div class="box todo-box">
+  <form id="todo-form">
+    <label class="label" style="font-size: 20px;">오늘은 어떤 계획이 있나요?</label>
+    <input class="input"
+    required
+    type="text" 
+    placeholder="Write a To Do and Press Enter"/>
+    <div style="height: 10px;"></div>
+    
+
+    <!-- <div class="items">
+      <input id="item1" type="checkbox" checked>
+  
+      <h1 class="done" aria-hidden="true">Done</h1>
+      <h1 class="undone" aria-hidden="true">Not Done</h1>
+    </div>
+  </div> -->
+  </form>
+  
+<!--일정 입력-->
+<ul id="todo-list" style=" left: 60px; top: 390px;"></ul>
+
+</div>
+
+
 <!--명언 표시-->
-    <div id="quote" style="font-size: 20px;">
+    <div id="quote">
       <span></span>
       <span></span>
     </div>
@@ -116,3 +123,5 @@
       
 </body>
 </html> 
+
+

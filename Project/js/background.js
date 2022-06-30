@@ -28,7 +28,7 @@ const chosenImage = images[Math.floor(Math.random() * images.length)];
 
 // Document.createElement() : 지정한 tagName의 HTML 요소를 만들어 반환, 구문: document.createElement(생성할 요소의 유형을 가리키는 문자열);
 const bgImage = document.createElement("img");
-
+bgImage.className = 'background'
 bgImage.src = `img/${chosenImage}`;
 
 // .appendChild() : 한 노드를 특정 부모 노드의 자식 노드 리스트 중 마지막 자식으로 붙인다.
