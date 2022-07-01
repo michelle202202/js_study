@@ -65,7 +65,7 @@ img.background {
 
 div.todo-box{
     display: inline-block;
-    width: 40%;
+    width: 25%;
     margin:50px;
 }
 #todo-form {
@@ -154,7 +154,7 @@ input:checked {
 /* calendar 꾸미기 */
 #calendar-box {
   display: inline-block;
-  width: 40%;
+  width: 25%;
   margin:54px;
   margin-bottom: 300px;
   top: 20%;
