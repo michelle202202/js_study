@@ -77,11 +77,6 @@ if(viewMonth === today.getMonth() && viewYear === today.getFullYear()){ // viewM
 
 }
 
-const dateChange = () => {
-    const date_input = document.getElementById("dateChice");
-    const text_input = document.getElementById("text");
-    text_input.value = date_input.value;
-  };
 
 renderCalendar(); // 위 코드를 함수로 만들어 호출
 

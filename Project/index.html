@@ -23,8 +23,7 @@
 <body>
 
 <!--로그인-->
-    <form class="hidden" id="login-form">
-      <label class="label">이름이 뭐에요?</label>
+      <form class="hidden" id="login-form">
           <input class="input"
           required
           maxlength="15"
@@ -38,14 +37,6 @@
 <!--로그인 후 박스 제거-->
       <h1 class="hidden" id="greeting"></h1>
 
-<!--시계 표시-->
-  <div id="clock">00:00</div>
-
-<!--날씨 표시-->
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
 
 
 <!--캘린더 표시-->
@@ -71,8 +62,6 @@
             <div class="day">토</div>
           </div>
           <div class="dates">
-            <input type="date" id="dateChice" onchange="dateChange();"/>
-            <input type="text" id="text"/>
           </div>
         </div>
       </div>
@@ -89,8 +78,6 @@
     required
     type="text" 
     placeholder="Write a To Do and Press Enter"/>
-    <div style="height: 10px;"></div>
-    
 
     <!-- <div class="items">
       <input id="item1" type="checkbox" checked>
@@ -100,18 +87,35 @@
     </div>
   </div> -->
   </form>
-  
-<!--일정 입력-->
-<ul id="todo-list" style=" left: 60px; top: 390px;"></ul>
 
+<!--일정 입력-->
+<ul id="todo-list"></ul>
 </div>
 
 
+<div class="box" 
+style="display:block; 
+background-color:#333333;
+color: #FFFFFF;
+text-align:center;
+margin: 0;
+margin-bottom: 0;
+padding: 1px;">
+<!--시계 표시-->
+    <div id="clock">00:00</div>
+<!--날씨 표시-->
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>   
 <!--명언 표시-->
     <div id="quote">
       <span></span>
       <span></span>
     </div>
+  </div>
+
+
 
       <script src="js/greetings.js"></script>
       <script src="js/clock.js"></script>
