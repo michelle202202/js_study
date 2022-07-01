@@ -14,7 +14,7 @@ function saveToDos(){
 
 // 등록한 목륵을 지우는 함수
 function deleteToDo(event){
-    const li = event.target.parentElement.parentElement; // target은 클릭된 HTML element, parentElement는 클릭된 element의 부모
+    const li = event.target.parentElement; // target은 클릭된 HTML element, parentElement는 클릭된 element의 부모
     li.remove(); // Element.remove() : 메서드는 DOM에서 요소를 제거
 
     // .filter() : 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환 // Array.prototype.filter()
@@ -23,23 +23,36 @@ function deleteToDo(event){
     saveToDos(); // 새 배열을 저장한다.
 }
 
+function isChecked(event){
+    const checkbox = event.target.parentElement;
+    checkbox.classList.toggle("on");
+    event.target.classList.toggle("on");
+}
+
 function painToDo(newTodo){
     const li = document.createElement("li"); //li를 만든다
     li.id = newTodo.id; // li에 id 값을 넣는다.
-    
+
     const span = document.createElement("span"); // span을 만든다
-    span.className = "tag is-success";
+    span.className = "todolist-box";
     span.innerText = newTodo.text; // span 내부에 from에서 준 새로운 텍스트(newTodo)값을 넣는다
     // 오브젝트를 .text를 사용해 변환해줘야 한다.
     
     const button = document.createElement("button");
     button.className = "delete is-small";
     button.addEventListener("click", deleteToDo);
-    
-    span.appendChild(button);
+
+    const checkbox = document.createElement("input") // input을 만든다
+    checkbox.className = "check-box" // 클래스 이름을 지정한다
+    checkbox.setAttribute("type", "checkbox"); // 지정된 요소의 속성 값을 설정한다
+    checkbox.addEventListener("click", isChecked); // 클릭시 isChecke 함수를 실행한다
+
+    li.appendChild(checkbox); // 
     li.appendChild(span); // span은 li의 내부에 있기 때문에 li 안에 span을 넣는다.
+    li.appendChild(button);
 
     toDoList.appendChild(li); // toDoList를 li에 추가한다.
+    
 }
 
 function handleToDoSubmit(event){
