@@ -67,35 +67,6 @@ dates.forEach((date, i) => {
 document.querySelector('.dates').innerHTML = dates.join('');
 
 
-// dates 클릭 이벤트를 함수로 생성
-// const Day = document.querySelector(".date")
-// const li = document.createElement("li");#todo-form input
-
-// Day.addEventListener('click',(event)=>{
-//     if(event.target!==li){
-//         li.style.border = '3px solid black';
-//     }
-//     Day.appendChild(li);
-
-// Day.addEventListener('click',(event)=>{
-//     if(event.target.tagName==='UL')return;
-//     if(event.target.className!=='disabled'){
-//         clearEvent();
-//         todoTitle.textContent = `What are you going to do on ${year}.${mon}.${event.target.textContent} 👀⁉`;
-//         event.target.style.border='3px solid red';
-//         DayOfChoice = (event.target.textContent)*1;
-//         MonOfChoice = mon;
-//         yearOfChoice = year;
-        
-//         displayToDoOnDays();
-//         clickEventArr.push(event.target);
-//         console.log(clickEventArr);
-//         input.focus();
-//     }
-    
-// });
-
-
 // 오늘 날짜 표시
 const today = new Date(); // new Date()를 통해 오늘 날짜에 맞는 date객체를 새로 만든다.
 if(viewMonth === today.getMonth() && viewYear === today.getFullYear()){ // viewMonth와 viewYear가 today의 데이터와 같은지 비교해서 충족하면
@@ -107,8 +78,33 @@ if(viewMonth === today.getMonth() && viewYear === today.getFullYear()){ // viewM
     }
 }
 
+const Day = document.querySelector(".dates")
+const todoTitle = document.querySelector('#todo-form label');
+
+let clickEventArr = [];
+
+// 다른 dates 클릭시 클리어되는 함수 생성 
+function clearEvent(){
+    clickEventArr.forEach((value)=>{
+        value.style.borderBottom  = '1px solid #333333';
+    });
 }
 
+// dates 클릭시 todolist에 날짜 표시되는 함수 생성
+Day.addEventListener('click',(event)=>{
+    if(event.target.tagName==='div.date')return;
+    if(event.target.className!=='other'){
+        clearEvent();
+        todoTitle.textContent = `${viewYear}년 ${viewMonth + 1}월 ${event.target.textContent}일 계획이 있나요?`;
+        event.target.style.borderBottom = "3px solid red"
+        
+        clickEventArr.push(event.target);
+        console.log(clickEventArr);
+    }
+    
+});
+
+}
 
 renderCalendar(); // 위 코드를 함수로 만들어 호출
 
