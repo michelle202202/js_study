@@ -1,60 +1,54 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="css/test1.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <title>Vanilla Coding | Bootcamp Prep</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - 달력</title>
+    <link rel="stylesheet" href="css/test1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
+    <script src="js/calendar_1.js" defer></script>
 </head>
 <body>
-  <div class="main">
-    <div class="content-wrap">
-      <div class="content-left">
-        <div class="main-wrap">
-          <div id="main-day" class="main-day"></div>
-          <div id="main-date" class="main-date"></div>
+    <section class="main">
+        <h1 class="main-title">Calendar AND TodoList</h1>
+        <div class="month clearfix">
+            <span class="left">
+                <i class="fas fa-chevron-left left"></i>
+            </span>
+            <span class="right">
+                <i class="fas fa-chevron-right right"></i>
+            </span>
+            <p class="month-name"></p>
         </div>
-        <div class="todo-wrap">
-          <div class="todo-title">Todo List</div>
-          <div class="input-wrap">
-            <input type="text" placeholder="please write here!!" id="input-box" class="input-box">
-            <button type="button" id="input-data" class="input-data">INPUT</button>
-            <div id="input-list" class="input-list"></div>
-          </div>
+        <div class="dayCount">
+            <ul class="dayCount-list clearfix">
+                <li>MON</li>
+                <li>TUE</li>
+                <li>WED</li>
+                <li>THU</li>
+                <li>FRI</li>
+                <li>SAT</li>
+                <li>SUN</li>
+            </ul>
         </div>
-      </div>
-      <div class="content-right">
-        <table id="calendar" >
-          <thead>
-            <tr class="btn-wrap clearfix">
-              <td>
-                <label id="prev">
-                    &#60;
-                </label>
-              </td>
-              <td  id="current-year-month" colspan="5"></td>
-              <td>
-                <label id="next">
-                    &#62;
-                </label>
-              </td>
-            </tr>
-            <tr>
-                <td class = "sun">Sun</td>
-                <td>Mon</td>
-                <td>Tue</td>
-                <td>Wed</td>
-                <td>Thu</td>
-                <td>Fri</td>
-                <td class= "sat">Sat</td>
-              </tr>
-          </thead>
-          <tbody id="calendar-body" class="calendar-body"></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <script src="js/test3.js"></script>
+        <ul class="day clearfix">
+          
+        </ul>
+
+    </section>
+    <section class="todo">
+        <h1 class="todo-title">
+            Today's To Do List
+        </h1>
+        <div class="textToDo">
+            <input type="text" class="textToDo-text">
+            <button class="textToDo-button add">Add</button>
+            <button class="textToDo-button reset">Reset</button>
+            <button class="textToDo-button allreset">All reset</button>
+        </div>
+        <ul class="todoList"></ul>
+    </section>
+
 </body>
 </html>

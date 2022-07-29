@@ -15,9 +15,11 @@
       *{
         font-family: 'Nanum Gothic', sans-serif;  
       }
+
       *{
-        box-sizing: border-box;
+        line-height:normal 
       }
+
     </style>
 </head>
 <body>
@@ -40,6 +42,7 @@
 
 
 <!--캘린더 표시-->
+<div class="content-wrap">
 <form id ="calendar-box">
     <div class="calendar">
       <div class="box">
@@ -68,8 +71,7 @@
     </div>
   </form>
 
-
-        
+    
 <!--일정 입력창-->
 <div class="box todo-box">
   <form id="todo-form">
@@ -91,16 +93,10 @@
 <!--일정 입력-->
 <ul id="todo-list"></ul>
 </div>
+</div>
 
 <!--시계, 날짜, 명언 표시-->
-<div class="box" 
-style="display:block; 
-background-color:#333333;
-color: #FFFFFF;
-text-align:center;
-margin: 0;
-margin-bottom: 0;
-padding: 1px;">
+<div class="info-box">
 <!--시계 표시-->
     <div id="clock">00:00</div>
 <!--날씨 표시-->

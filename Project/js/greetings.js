@@ -17,7 +17,7 @@ function onLoginSubmit(event) {
 // 자주 사용하는 코드는 함수로 만들어서 사용한다.
 function paintGreetings(username) {
   // paintGreetings 함수는 username 이라는 인자를 받고 있고,
-  greeting.innerText = `안녕하세요!\n ${username} 님😊`; // 비어있는 h1 요소 안에 텍스트를 추가한다.
+  greeting.innerText = `Hello! ${username} 님😊`; // 비어있는 h1 요소 안에 텍스트를 추가한다.
   greeting.classList.remove(HIDDEN_CLASSNAME); // h1 요소로 부터 classList에 class명인 hidden 을 제거한다.
 }
 

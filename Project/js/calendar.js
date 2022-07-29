@@ -1,3 +1,4 @@
+
 let date = new Date(); // 날짜 Date 객체 활용
 
 const renderCalendar = () => {
@@ -7,18 +8,19 @@ const renderCalendar = () => {
 
 document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
 
-// 지난 달 날짜 며칠을 몇 개를 그려내야 될지 결정, 다음 달 날짜 며칠, 몇 개를 그려내야 될지를 결정
+// 지난 달 날짜 몇 일을 몇 개를 그려내야 될지 결정, 다음 달 날짜 며칠, 몇 개를 그려내야 될지를 결정
 const prevLast = new Date(viewYear, viewMonth, 0);
 const thisLast = new Date(viewYear, viewMonth + 1, 0);
 
-const PLDate = prevLast.getDate();
-const PLDay = prevLast.getDay();
+const PLDate = prevLast.getDate(); // 이전달 날짜 변수 생성
+const PLDay = prevLast.getDay(); // 이전달 요일 변수 생성
 
-const TLDate = thisLast.getDate();
-const TLDay = thisLast.getDay();
+const TLDate = thisLast.getDate(); // 다음달 날짜 변수 생성
+const TLDay = thisLast.getDay(); // 다음달 요일 변수 생성
 
 // 날짜를 넣기 위한 빈 배열 만들기
 const prevDates = []; 
+
 // keys() 메서드를 활용하면 0부터 n - 1까지의 Array Iterator가 생성 
 // 이 Array Iterator를 배열로 만들어 내면 0부터 n-1까지의 배열을 얻어냄
 // 이번 달 마지막 날짜 + 1을 n에 전달
@@ -63,6 +65,36 @@ dates.forEach((date, i) => {
 
 // dates 태그의 innerHTML 프로퍼티에 dates 배열에 join 메서드를 호출한 결과를 할당한다.
 document.querySelector('.dates').innerHTML = dates.join('');
+
+
+// dates 클릭 이벤트를 함수로 생성
+// const Day = document.querySelector(".date")
+// const li = document.createElement("li");#todo-form input
+
+// Day.addEventListener('click',(event)=>{
+//     if(event.target!==li){
+//         li.style.border = '3px solid black';
+//     }
+//     Day.appendChild(li);
+
+// Day.addEventListener('click',(event)=>{
+//     if(event.target.tagName==='UL')return;
+//     if(event.target.className!=='disabled'){
+//         clearEvent();
+//         todoTitle.textContent = `What are you going to do on ${year}.${mon}.${event.target.textContent} 👀⁉`;
+//         event.target.style.border='3px solid red';
+//         DayOfChoice = (event.target.textContent)*1;
+//         MonOfChoice = mon;
+//         yearOfChoice = year;
+        
+//         displayToDoOnDays();
+//         clickEventArr.push(event.target);
+//         console.log(clickEventArr);
+//         input.focus();
+//     }
+    
+// });
+
 
 // 오늘 날짜 표시
 const today = new Date(); // new Date()를 통해 오늘 날짜에 맞는 date객체를 새로 만든다.

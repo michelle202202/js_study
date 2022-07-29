@@ -1,6 +1,6 @@
 
 const toDoFrom = document.getElementById("todo-form");
-const toDoInput = toDoFrom.querySelector("input");
+const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos"; // 자주 사용하는 string은 미리 정의해둔다.
@@ -25,9 +25,10 @@ function deleteToDo(event){
 
 function isChecked(event){
     const checkbox = event.target.parentElement;
-    checkbox.classList.toggle("on");
-    event.target.classList.toggle("on");
+    checkbox.classList.toggle("checked");
+    event.target.classList.toggle("checked");
 }
+
 
 function painToDo(newTodo){
     const li = document.createElement("li"); //li를 만든다
@@ -39,7 +40,8 @@ function painToDo(newTodo){
     // 오브젝트를 .text를 사용해 변환해줘야 한다.
     
     const button = document.createElement("button");
-    button.className = "delete is-small";
+    button.className = "close-button";
+    button.innerText = "❌"
     button.addEventListener("click", deleteToDo);
 
     const checkbox = document.createElement("input") // input을 만든다
