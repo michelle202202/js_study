@@ -198,8 +198,8 @@ ul li:hover {
 }
 
 .nav-btn {
-    width: 28px;
-    height: 30px;
+    width: 30px;
+    height: 35px;
     border: none;
     font-size: 16px;
     line-height: 30px;
@@ -249,6 +249,7 @@ ul li:hover {
 .day:nth-child(7n + 1),
 .date:nth-child(7n + 1){
     color: #d12e3e;
+    
 }
 
 /* 토요일 파란색으로 칠하기 */
