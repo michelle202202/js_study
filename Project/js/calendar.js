@@ -79,27 +79,31 @@ if(viewMonth === today.getMonth() && viewYear === today.getFullYear()){ // viewM
 }
 
 const Day = document.querySelector(".dates")
-const todoTitle = document.querySelector('#todo-form label');
+const todoTitle = document.querySelector("#todo-form label");
+const toDoFrom = document.getElementById("todo-form");
 
 let clickEventArr = [];
 
-// 다른 dates 클릭시 클리어되는 함수 생성 
+// 다른 날짜 클릭시 클리어 함수 생성 
 function clearEvent(){
     clickEventArr.forEach((value)=>{
-        value.style.borderBottom  = '1px solid #333333';
+        value.style.borderBottom  = 'none';
     });
 }
 
-// dates 클릭시 todolist에 날짜 표시되는 함수 생성
+// dates 클릭시 todo form에 선택한 날짜 표시되는 함수 생성
 Day.addEventListener('click',(event)=>{
-    if(event.target.tagName==='div.date')return;
-    if(event.target.className!=='other'){
+    
+    if(event.target.className ==='div.date')return;
+    if(event.target.className =='this'|| event.target.className =='this today'){
         clearEvent();
         todoTitle.textContent = `${viewYear}년 ${viewMonth + 1}월 ${event.target.textContent}일 계획이 있나요?`;
-        event.target.style.borderBottom = "3px solid red"
-        
+        event.target.style.borderBottom = "3px solid blue"
+
+
         clickEventArr.push(event.target);
         console.log(clickEventArr);
+
     }
     
 });
@@ -133,3 +137,6 @@ const goToday = ((event) => {
 })
 
 
+// - localStorage.setItem : 이름을 저장한다
+// - localStorage.getItem : 이름을 불러온다
+// - localStorage.removeItem : 이름을 삭제한다

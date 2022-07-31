@@ -3,6 +3,8 @@ const toDoFrom = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
+
+
 const TODOS_KEY = "todos"; // 자주 사용하는 string은 미리 정의해둔다.
 
 let toDos = []; 
@@ -23,12 +25,11 @@ function deleteToDo(event){
     saveToDos(); // 새 배열을 저장한다.
 }
 
+// 체크박스에서 체크시 취소선 넣기
 function isChecked(event){
     const checkbox = event.target.parentElement;
     checkbox.classList.toggle("checked");
-    event.target.classList.toggle("checked");
 }
-
 
 function painToDo(newTodo){
     const li = document.createElement("li"); //li를 만든다
@@ -49,9 +50,9 @@ function painToDo(newTodo){
     checkbox.setAttribute("type", "checkbox"); // 지정된 요소의 속성 값을 설정한다
     checkbox.addEventListener("click", isChecked); // 클릭시 isChecke 함수를 실행한다
 
-    li.appendChild(checkbox); // 
+    li.appendChild(checkbox); // li 안에 checkbox를 넣는다
     li.appendChild(span); // span은 li의 내부에 있기 때문에 li 안에 span을 넣는다.
-    li.appendChild(button);
+    li.appendChild(button); // li 안에 button을 넣는다
 
     toDoList.appendChild(li); // toDoList를 li에 추가한다.
     
