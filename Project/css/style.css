@@ -93,6 +93,7 @@ div.todo-box{
 }
 
 .checked {
+  
   text-decoration: line-through;
   color:dimgray;
 }
@@ -127,12 +128,12 @@ ul li:hover {
   background: #ddd;
 }
 
-.check-box {
+/* .check-box {
   background: #888;
   color: #fff;
   text-decoration: line-through;
   
-}
+} */
 
 .check-box::before {
   content: '';

@@ -66,6 +66,7 @@ function handleToDoSubmit(event){
         // text 값과 id 값이 포함된 newTodoObj 객체를 만든다.
         text: newTodo,
         id: Date.now(), // Date.now() : UTC 기준으로 1970년 1월 1일 0시 0분 0초부터 현재까지 경과된 밀리 초를 반환
+        // date: 날짜를 저장 // 
     };
     toDos.push(newTodoObj); // newTodo를 toDos 새로운 배열에 추가한다. (과거 내역은 없는 상태)
     painToDo(newTodoObj); // painToDo 함수에 newTodo를 넣어서 호출한다.
@@ -81,7 +82,9 @@ if(savedToDos !== null){
     // JSON.parse(text) : JSON 문자열의 구문을 분석하고, 그 결과에서 JavaScript 값이나 객체를 생성한다.
     // text : JSON으로 변환할 문자열 
     const parsedToDos = JSON.parse(savedToDos);
+    // 날짜를 todolist 셋팅할 때 내가 선택한 날짜가 맞는지 필터 돌린다? 해당되는것만  painToDo로 보내서 보여준다.
     toDos = parsedToDos; // 맨 위 빈 배열에 let 을 사용하여 이전 값을 넣어 모든 값을 넣는다.
     parsedToDos.forEach(painToDo);
 }
 
+// 다른 날짜를 선택할 때 새로운 todolist를 그려줘야 하는 함수가 필요함
