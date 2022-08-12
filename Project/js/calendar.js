@@ -100,6 +100,10 @@ Day.addEventListener('click',(event)=>{
         todoTitle.textContent = `${viewYear}년 ${viewMonth + 1}월 ${event.target.textContent}일 계획이 있나요?`;
         event.target.style.borderBottom = "3px solid blue"
 
+        DayChoice = (event.target.textContent)*1;
+        MonChoice = viewMonth + 1;
+        yearChoice = viewYear;
+
 
         clickEventArr.push(event.target);
         console.log(clickEventArr);

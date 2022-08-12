@@ -65,10 +65,15 @@ img.background {
   display: flex;
   align-items: center;
   width: 1210px;
-  height: 1200px;
+  height: 730px;
   margin: 0 auto;
   border-radius: 20px;
   overflow: hidden;
+  position: absolute;
+  top: 50%;
+  margin-top: -375px;
+  left: 50%;
+  margin-left: -605px;
 
 }
 

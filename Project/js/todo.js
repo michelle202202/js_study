@@ -3,8 +3,6 @@ const toDoFrom = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
-
-
 const TODOS_KEY = "todos"; // 자주 사용하는 string은 미리 정의해둔다.
 
 let toDos = []; 
@@ -57,6 +55,8 @@ function painToDo(newTodo){
     toDoList.appendChild(li); // toDoList를 li에 추가한다.
     
 }
+
+
 
 function handleToDoSubmit(event){
     event.preventDefault();
