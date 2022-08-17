@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Project</title>
+    <!--폰트 스타일 지정-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+      *{
+        font-family: 'Nanum Gothic', sans-serif;  
+      }
+
+      *{
+        line-height:normal 
+      }
+
+    </style>
+</head>
+<body>
+
+<!--로그인-->
+      <form class="hidden" id="login-form">
+          <input class="input"
+          required
+          maxlength="15"
+          type="text"
+          placeholder="What is your name?">
+          <div style="height: 10px;"></div>
+          <input type="submit"
+          button class="button is-success" value="GO!"/>
+      </form>
+
+<!--로그인 후 박스 제거-->
+      <h1 class="hidden" id="greeting"></h1>
+
+
+
+<!--캘린더 표시-->
+<div class="content-wrap">
+<form id ="calendar-box">
+    <div class="calendar">
+      <div class="box" style="height: 600px;">
+        <div class="header">
+          <div class="year-month"></div>
+          <div class="nav">
+            <button class="nav-btn go-prev" onclick="prevMonth(event)">&lt;</button>
+            <button class="nav-btn go-today" onclick="goToday(event)">Today</button>
+            <button class="nav-btn go-next" onclick="nextMonth(event)">&gt;</button>
+          </div>
+        </div>
+        <div class="main">
+          <div class="days">
+            <div class="day">일</div>
+            <div class="day">월</div>
+            <div class="day">화</div>
+            <div class="day">수</div>
+            <div class="day">목</div>
+            <div class="day">금</div>
+            <div class="day">토</div>
+          </div>
+          <div class="dates">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+    
+<!--일정 입력창-->
+<div class="box todo-box">
+  <form id="todo-form">
+    <label class="label" style="font-size: 20px;"></label>
+    <input class="input"
+    required
+    type="text" 
+    placeholder="Write a To Do and Press Enter"/>
+  </form>
+
+<!--일정 입력-->
+<ul id="todo-list"></ul>
+</div>
+</div>
+
+<!--시계, 날짜, 명언 표시-->
+<div class="info-box">
+<!--시계 표시-->
+    <div id="clock">00:00</div>
+<!--날씨 표시-->
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>   
+<!--명언 표시-->
+    <div id="quote">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+
+
+      <script src="js/greetings.js"></script>
+      <script src="js/clock.js"></script>
+      <script src="js/quotes.js"></script>
+      <script src="js/background.js"></script>
+      <script src="js/todo.js"></script>
+      <script src="js/weather.js"></script>
+      <script src="js/calendar.js"></script>
+      
+</body>
+</html> 
+
+

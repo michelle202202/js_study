@@ -1,0 +1,292 @@
+
+.hidden{
+    display: none;
+}
+/* 배경 이미지 꽉 채우기 */
+img.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+#login-form {
+    width: 400px;
+    margin-bottom: 20px;
+    margin: 5px;
+    padding: 0;
+    top: 7%;
+
+}
+
+#weather {
+  font-size: 15px;
+}
+
+#clock {
+  font-size: 15px;
+}
+
+#quote {
+
+  font-size: 15px;
+}
+
+.info-box {
+  display:block; 
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color:#333333;
+  color: #FFFFFF;
+  text-align:center;
+  margin-bottom: 10px;
+  padding: 5px;
+  opacity:0.8;
+}
+
+#greeting {
+    font-size: 18px; 
+    color:black;
+    display:block; 
+    background-color:#333333;
+    color: #FFFFFF;
+    text-align:center;
+    margin: 0;
+    padding: 0;
+    opacity:0.8;
+}
+
+/*--달력 + 일정리스트 박스 감싸기--*/
+.content-wrap {
+  display: flex;
+  align-items: center;
+  width: 1210px;
+  height: 730px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  margin-top: -375px;
+  left: 50%;
+  margin-left: -605px;
+
+}
+
+div.todo-box{
+    display: inline-block;
+    width: 450px;
+    height: 600px;
+    margin-bottom: 120px;
+    margin-left: 2px;
+    margin-right: 80px;
+    overflow: scroll;
+
+}
+
+#todo-form {
+    padding: 10px;
+
+}  
+
+#todo-list {
+  padding: 10px;
+}
+
+.checked {
+  
+  text-decoration: line-through;
+  color:dimgray;
+}
+
+.todolist-box {
+  margin: 5px;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 8px 10px 20px;
+  background: #eee;
+  font-size: 15px;
+  transition: 0.2s;
+  border-bottom: 1px solid #333333;
+
+  /* 목록을 선택 및 복사 불가로 만들기 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 리스트를 홀짝으로 색상 변경하기 */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* 리스트에 커서를 대면 색상 변경하기 */
+ul li:hover {
+  background: #ddd;
+}
+
+/* .check-box {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+  
+} */
+
+.check-box::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+.close-button {
+  position: absolute;
+  right: 0;
+  top: 1px;
+  padding: 6px 6px 6px 6px;
+}
+
+.close-button:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+
+/* calendar 꾸미기 */
+#calendar-box {
+  display: inline-block;
+  width: 600px;
+  margin-left: 80px;
+  margin-right: 2px;
+  margin-bottom: 100px;
+  top: 20%;
+  left: 22%;
+  vertical-align: top;
+}
+
+.box {
+  margin-bottom: 20px;
+  padding: 50px;
+  border-width: 10px;
+  top: 150px;
+  left: 300px;
+  opacity:0.85;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.year-month {
+    font-size: 35px;
+}
+
+.nav {
+    display: flex;
+    border: 1px solid #333333;
+    border-radius: 5px;
+}
+
+.nav-btn {
+    width: 30px;
+    height: 35px;
+    border: none;
+    font-size: 16px;
+    line-height: 30px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.go-today {
+    width: 75px;
+    border-left: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+.days {
+    display: flex;
+    margin: 25px 0 10px;
+}
+
+.day {
+    width: calc(100% / 7);
+    text-align: center;
+}
+
+.dates {
+    display: flex;
+    flex-flow: row wrap;
+    height: 455px;
+    border-top: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+.date {
+    width: calc(100% / 7);
+    padding: 15px;
+    text-align: right;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #333333;
+
+}
+
+/* 날짜에 마우스 커서를 대면 색상 바꾸기 */
+.date:hover {
+  background: #ddd;
+}
+
+/* 일요일 빨간색으로 칠하기 */
+.day:nth-child(7n + 1),
+.date:nth-child(7n + 1){
+    color: #d12e3e;
+    
+}
+
+/* 토요일 파란색으로 칠하기 */
+.day:nth-child(7n),
+.date:nth-child(7n){
+    color: #396ee2;
+}
+
+/* opacity CSS 속성은 요소의 불투명도를 설정 */
+.other {
+    opacity: .3;
+}
+
+/* 오늘 날짜 백그라운드 색상 주기 */
+.today {
+    position: relative;
+    color: #FFFFFF;
+}
+
+/* 오늘 날짜에 빨간색 표시하기 */
+.today::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-color: #FF0000;
+    border-radius: 50%;
+    content: '';
+  }
+
