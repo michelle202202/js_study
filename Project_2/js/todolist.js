@@ -9,10 +9,10 @@ form.addEventListener('submit', function(e) {
   e.preventDefault();
 
   // Get the value of the input field
-  var todoText = input.value;
+  const todoText = input.value;
 
   // Create a new list item with the to-do text
-  var todoItem = document.createElement('li');
+  const todoItem = document.createElement('li');
   todoItem.innerHTML = todoText;
 
   // Add a click event listener to the to-do item
